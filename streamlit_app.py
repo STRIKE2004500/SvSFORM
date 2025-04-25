@@ -6,10 +6,7 @@ import pandas as pd
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Read from a worksheet
-df = conn.read(worksheet="WOS battle")
+df = conn.read(worksheet="SvS battle")
 
 # Display the dataframe
 st.dataframe(df)
-
-
-

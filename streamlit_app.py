@@ -58,6 +58,19 @@ with st.form("registration_form"):
         index=0
     )
     
+    # Availability Times
+    joining_from = st.selectbox(
+        "Joining FROM*",
+        ["12:00 UTC", "13:00 UTC", "14:00 UTC", "15:00 UTC", "16:00 UTC", "17:00 UTC"],
+        index=0
+    )
+    
+    joining_to = st.selectbox(
+        "TO*",
+        ["12:00 UTC", "13:00 UTC", "14:00 UTC", "15:00 UTC", "16:00 UTC", "17:00 UTC", "18:00 UTC"],
+        index=0
+    )
+    
     # Submit Button
     submitted = st.form_submit_button("Submit Registration")
     
@@ -74,7 +87,9 @@ with st.form("registration_form"):
                 fc_level,
                 infantry_level,
                 lancer_level,
-                marksman_level
+                marksman_level,
+                joining_from,
+                joining_to
             ]
             
             try:

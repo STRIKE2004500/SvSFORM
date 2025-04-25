@@ -35,7 +35,7 @@ with st.form("registration_form"):
     # FC Level
     fc_level = st.selectbox(
         "What is Your FC level?*",
-        ["F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     

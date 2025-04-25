@@ -100,5 +100,3 @@ with st.form("registration_form"):
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
 
-# Connection confirmation
-st.success("Successfully connected to Google Sheets")

@@ -1,12 +1,18 @@
 import streamlit as st
-from streamlit.connections import ExperimentalBaseConnection
 import pandas as pd
+from gspread_pandas import Client, Spread
 
-# Create a connection (using Streamlit's built-in GSheets connector)
-conn = st.connection("gsheets", type="google_sheets")
+# Authenticate with Google Sheets (using service account)
+@st.cache_resource
+def get_gsheets_client():
+    return Client()
 
-# Read data from the worksheet
-df = conn.read(worksheet="SvS battle")  # Ensure worksheet name matches exactly
+# Read data from worksheet
+def get_sheet_data():
+    client = get_gsheets_client()
+    spread = Spread("YOUR_GOOGLE_SHEET_ID")  # Replace with your Sheet ID
+    return spread.sheet_to_df(sheet="SvS battle")
 
-# Display the dataframe
+# Main app
+df = get_sheet_data()
 st.dataframe(df)

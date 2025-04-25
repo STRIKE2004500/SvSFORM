@@ -10,7 +10,7 @@ def get_gsheets_client():
 # Read data from worksheet
 def get_sheet_data():
     client = get_gsheets_client()
-    spread = Spread("YOUR_GOOGLE_SHEET_ID")  # Replace with your Sheet ID
+    spread = Spread("WOS battle")  # Replace with your Sheet ID
     return spread.sheet_to_df(sheet="SvS battle")
 
 # Main app

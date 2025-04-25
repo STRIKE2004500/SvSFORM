@@ -19,8 +19,8 @@ gc = gspread.authorize(credentials)
 # Alliance dropdown menu
 alliance = st.selectbox(
     "What is Your Alliance?",
-    ["Select Alliance", "TCW", "MRA", "RFA", "SHR"],
-    index=0  # Default to "Select Alliance"
+    ["TCW", "MRA", "RFA", "SHR"],
+    index=0  # Default to first option (TCW)
 )
 
 # Connection confirmation

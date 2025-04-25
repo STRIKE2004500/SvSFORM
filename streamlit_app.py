@@ -1,12 +1,12 @@
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
+from streamlit.connections import ExperimentalBaseConnection
 import pandas as pd
 
-# Connect to Google Sheets
-conn = st.connection("gsheets", type=GSheetsConnection)
+# Create a connection (using Streamlit's built-in GSheets connector)
+conn = st.connection("gsheets", type="google_sheets")
 
-# Read from a worksheet
-df = conn.read(worksheet="SvS battle")
+# Read data from the worksheet
+df = conn.read(worksheet="SvS battle")  # Ensure worksheet name matches exactly
 
 # Display the dataframe
 st.dataframe(df)
